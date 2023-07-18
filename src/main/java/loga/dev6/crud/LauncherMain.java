@@ -27,13 +27,10 @@ public class LauncherMain {
                 ClientService clientService = new ClientService(connection);
 
                 long clientId = clientService.create("New Client");
-                System.out.println("Created client ID: " + clientId);
-
+                System.out.println("Id : " + clientId);
                 String clientName = clientService.getById(clientId);
-                System.out.println("Client name: " + clientName);
-
+                System.out.println("Name : " + clientName);
                 clientService.setName(clientId, "Updated Client");
-
                 List<Client> clients = clientService.listAll();
                 for (Client client : clients) {
                     System.out.println("Client ID: " + client.getId() + ", Name: " + client.getName());
